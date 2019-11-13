@@ -3,6 +3,19 @@ from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.views.generic.detail import DetailView
 from django.urls import reverse_lazy
 from .models import Bookmark
+from rest_framework.generics import ListAPIView, RetrieveUpdateDestroyAPIView
+from .serializers import BookmarkSerializer
+
+
+class ApiBookmarkList(ListAPIView):
+    queryset = Bookmark.objects.all()
+    serializer_class = BookmarkSerializer
+
+
+class ApiBookmarkDetail(RetrieveUpdateDestroyAPIView):
+   queryset = Bookmark.objects.all()
+   serializer_class = BookmarkSerializer
+
 
 # Create your views here.
 class BookmarkListView(ListView):

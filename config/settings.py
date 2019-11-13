@@ -24,7 +24,7 @@ SECRET_KEY = '296c*=z*md+5h#8+8ozmt*7$2rnxg^yn=ad2orb7)@^my62md_'
 
 # SECURITY WARNING: don't run with debug turned on in production! 
 # 배포시 디버그는 false
-DEBUG = False
+DEBUG = True
 
 # 별표시는 모든 호스트에서 접속 하게 만드는 것
 ALLOWED_HOSTS = ['*']
@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'bookmark'
+    'bookmark',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
